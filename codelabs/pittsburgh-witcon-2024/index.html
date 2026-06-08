@@ -1,0 +1,656 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Pittsburgh WITCON 2024</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  codelab-ga4id=""
+                  id="pittsburgh-witcon-2024"
+                  title="Pittsburgh WITCON 2024"
+                  environment="web"
+                  feedback-link="https://zarin.io">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 is-upgraded>First Half</h2>
+<p>✅ Understanding HTTP <br>✅ HTTP Request Lifecycle <br>✅ Web Architecture Overview <br>✅ HTTP Request Structure <br>✅ HTTP Response Structure <br>✅ HTTP Request Example <br>✅ REST API 101 <br>✅ API Versioning <br>✅ API Routes <br>✅ API Security Concepts <br>✅ API Consumption with Postman REST Client 🚀</p>
+<h2 is-upgraded>Second Half</h2>
+<p>✅ Spec Driven Development <br>✅ Analyzing an API Spec <br>✅ Power of AI <br>✅ Workshop - Forge the Code 🧙🏼‍♀️🪄</p>
+<h2 is-upgraded>Software Utilized</h2>
+<ul>
+<li>Download <a href="https://www.postman.com/" target="_blank">Postman</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Understanding HTTP" duration="5">
+        <h2 is-upgraded>What is HTTP?</h2>
+<ul>
+<li>HTTP (HyperText Transfer Protocol) is a stateless, communication protocol</li>
+<li>A protocol is a system of rules</li>
+<li>Stateless means each request is independent, and the server doesn&#39;t store session information</li>
+<li>An HTTP packet is a packet of data that carries information between client and server</li>
+<li>The <strong>S</strong> at the end of HTTP<strong>S</strong>, stands for secured</li>
+</ul>
+<p class="image-container"><img alt="drawing" style="width: 500.00px" src="img/e0b7749ea4e1a3cb.png"></p>
+<h2 is-upgraded>HTTP Versions</h2>
+<ul>
+<li><code>HTTP/1.0</code>: Basic functionality with no persistence between requests.</li>
+<li><code>HTTP/1.1</code>: Persistent connections, better caching, but still suffers from limitations like head-of-line blocking. <ul>
+<li><strong>Head-of-line</strong> is when the first packet in a queue prevents other packets from being processed, creating a bottleneck</li>
+</ul>
+</li>
+<li><code>HTTP/2</code>: Major performance improvements with multiplexing and binary framing but still reliant on TCP.</li>
+<li><code>HTTP/3</code>: Uses QUIC over UDP, eliminating head-of-line blocking and improving connection speed and reliability. <ul>
+<li><strong>Quick UDP Internet Connections</strong> developed by Google runs over UDP and provides features similar to TCP</li>
+</ul>
+</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTTP Request Lifecycle" duration="1">
+        <p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/1c6ddc0d057af7d2.png"></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Key</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Value</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>DNS Lookup</p>
+</td><td colspan="1" rowspan="1"><p>Resolve domain names (i.e., website addresses) to IP addresses, a unique number that identifies a device connected to the internet.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>TCP 3-Way Handshake</p>
+</td><td colspan="1" rowspan="1"><p>Establishing a connection between client and server.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>HTTP Request</p>
+</td><td colspan="1" rowspan="1"><p>Client sends an HTTP request.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>HTTP Response</p>
+</td><td colspan="1" rowspan="1"><p>Server processes and returns the appropriate response.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Connection Close</p>
+</td><td colspan="1" rowspan="1"><p>Connections can be set to persistent, therefore reused (i.e., closed by client), or one time connections (i.e., closed by server).</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Web Architecture Overview" duration="2">
+        <p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/3a67649013adce5.png"></p>
+<h2 is-upgraded>HTTP Request Flow</h2>
+<p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/791818163de77ab3.png"></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Key</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Value</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Content Delivery Network (CDN)</p>
+</td><td colspan="1" rowspan="1"><p>A middleman cache (i.e., proxy cache) between a user and a server, often close to the user geographically, that stores copies of website content to reduce latency and improve load times.</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Load Balancer</p>
+</td><td colspan="1" rowspan="1"><p>A device/software that distributes network traffic across multiple servers to improve efficiency and reliability.</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTTP Request Structure" duration="5">
+        <p class="image-container"><img alt="drawing" style="width: 300.00px" src="img/cefdc3646d7a17c.png"></p>
+<h2 is-upgraded>URL Components</h2>
+<h3 is-upgraded>Base Syntax</h3>
+<pre><code>https://www.wesellvehicles.com/vehicles/{make}/{model}?year={year}&amp;exterior-color=navy&amp;page-number=1&amp;page-size=25
+
+</code></pre>
+<h3 is-upgraded>Example</h3>
+<pre><code>https://www.wesellvehicles.com/vehicles/bmw/x3?year=2017&amp;exterior-color=navy&amp;page-number=1&amp;page-size=25
+</code></pre>
+<ol type="1">
+<li>Scheme / Protocol</li>
+</ol>
+<ul>
+<li><code>https://</code></li>
+<li>This specifies the protocol used for communication. It could be <code>http</code>, <code>https</code>, etc. <code>https</code> is secure and encrypted.</li>
+</ul>
+<ol type="1" start="2">
+<li>Host / Domain</li>
+</ol>
+<ul>
+<li><code>www.wesellvehicles.com</code></li>
+<li>This is the domain name of the server where the resource is located. It typically includes the subdomain (<code>www</code>), the second-level domain (<code>wesellvehicles</code>), and the top-level domain (<code>.com</code>). <ul>
+<li>Root Domain: <code>"."</code></li>
+<li>Top-Level Domains: <code>.edu</code>, <code>.org</code>, <code>.gov</code>, <code>.com</code></li>
+<li>Second-Level Domains: <code>khanacademy.org</code>, <code>microsoft.com</code></li>
+<li>Third-Level Domains: <code>www.khanacademy.org</code>, <code>support.microsoft.com</code></li>
+</ul>
+</li>
+</ul>
+<ol type="1" start="3">
+<li>Path</li>
+</ol>
+<ul>
+<li><code>/vehicles/bmw/x3</code></li>
+<li>The path represents the specific resource or endpoint on the server you are trying to access.</li>
+</ul>
+<ol type="1" start="4">
+<li>Query Parameters</li>
+</ol>
+<ul>
+<li><code>?year=2017&exterior-color=navy&page-number=1&page-size=25</code></li>
+<li>The query string begins with <code>?</code> and contains key-value pairs separated by <code>&</code>. Each key-value pair provides parameters for the request: <ul>
+<li><code>year=2017</code>: The year the vehicle was manufactured.</li>
+<li><code>exterior-color=navy</code>: The exterior color of the vehicle.</li>
+<li><code>page-number=1</code>: Provide the first page of results.</li>
+<li><code>page-size=25</code>: Request to see 25 items per page of results.</li>
+</ul>
+</li>
+<li>The query parameters can be written in either format: <ul>
+<li>camelCase, more common in JavaScript-based projects and is widely accepted in RESTful APIs or <ul>
+<li>Hyphens (<code>-</code>), common in static URLs, and useful for SEO-optimized URLs that need to be indexed by search engines.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>⭐️ Bonus question: What port does HTTP communicate over?</p>
+<h2 is-upgraded>HTTP Methods</h2>
+<p>Methods are ways to request data from servers. They are in the form of verbs. Often referred to as CRUD operations.</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Method</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Usage</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>GET</code></p>
+</td><td colspan="1" rowspan="1"><p>Get data from the server</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>POST</code></p>
+</td><td colspan="1" rowspan="1"><p>Create a new resource on the server</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>PUT</code></p>
+</td><td colspan="1" rowspan="1"><p>Update an existing resource on the server</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>DELETE</code></p>
+</td><td colspan="1" rowspan="1"><p>Delete resource(s) on the server</p>
+</td></tr>
+</table>
+<h2 is-upgraded>HTTP Request Headers</h2>
+<p>Imagine sending a letter through the postal service. The envelope is the part that has your address and the person&#39;s address. That&#39;s like the HTTP headers, which have information about where the message is going and how it&#39;s being sent</p>
+<p>Common Request Headers:</p>
+<ul>
+<li><code>Host</code>: Specifies the domain name of the server.</li>
+<li><code>User-Agent</code>: Identifies the client software making the request (e.g., browser, app).</li>
+<li><code>Accept</code>: Informs the server what content types the client is willing to accept.</li>
+<li><code>Content-Type</code>: Specifies the media type of the body of the request when sending data (such as in a <code>POST</code> or <code>PUT</code> request).</li>
+<li><code>Authorization</code>: Used to provide authentication credentials (e.g., a Bearer token for OAuth).</li>
+</ul>
+<p>Example HTTP GET Request:</p>
+<pre><code>GET /weather?city=San+Francisco HTTP/1.1
+Host: api.weather.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15
+Accept: application/json
+</code></pre>
+<h2 is-upgraded>HTTP Body Structure</h2>
+<p>The body of the letter is the actual message you are sending inside the envelope. It could be words, pictures, or anything you&#39;re trying to communicate.</p>
+<p>The body carries the payload that the client is sending to the server. This might include data in the form of <code>JSON</code>, <code>XML</code>, plain text, a file upload, etc.</p>
+<p>Key points:</p>
+<ul>
+<li>Methods like <code>GET</code> <em>typically</em> have an empty body in requests, while <code>POST</code>, <code>PUT</code> <em>should</em> include a body.</li>
+<li><code>Content-Type</code>: This header indicates the format of the body (e.g., <code>application/json</code>, <code>text/html</code>, etc.).</li>
+<li><code>Content-Length</code>: This header specifies the size of the body in bytes.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTTP Response Structure" duration="3">
+        <p class="image-container"><img alt="drawing" style="width: 300.00px" src="img/3b5acd0ca3e184f7.png"></p>
+<h2 is-upgraded>Status Codes</h2>
+<p>HTTP status codes are short messages your web browser and websites use to talk to each other when you&#39;re browsing the internet. They tell your browser what happened when it tried to load a webpage.</p>
+<p>Here&#39;s a breakdown of the main categories:</p>
+<h3 is-upgraded><code>1xx</code>: Information</h3>
+<p>These codes let your browser know the request is being processed, but there&#39;s no final result yet. You rarely see these.</p>
+<h3 is-upgraded><code>2xx</code>: Success</h3>
+<p>Everything worked as expected!</p>
+<ul>
+<li><code>200</code> OK: Standard success response for <code>GET</code> requests.</li>
+<li><code>201</code> Created: Typically returned by a <code>POST</code> request when a resource is successfully created.</li>
+<li><code>204</code> No Content: The server successfully processed the request, but no content is returned, typically used when updating resources via <code>PUT</code> or removing resources via <code>DELETE</code>.</li>
+</ul>
+<h3 is-upgraded><code>3xx</code>: Redirection</h3>
+<p>These codes mean the website you&#39;re trying to reach is sending you somewhere else.</p>
+<ul>
+<li><code>301</code> Moved Permanently: The requested resource has been assigned a new permanent URI, and future requests should use the new URI.</li>
+<li><code>304</code> Not Modified: Used with conditional <code>GET</code> requests when the content hasn&#39;t changed since the last fetch. The server returns this response, so the client can use cached data.</li>
+</ul>
+<h3 is-upgraded><code>4xx</code>: Client Error</h3>
+<p>The problem is on your side (the browser or your request).</p>
+<ul>
+<li><code>400</code> Bad Request: The server could not understand the request due to invalid syntax (e.g., malformed JSON or query parameters).</li>
+<li><code>401</code> Unauthorized: The client has not passed in valid authentication credentials to access the resource.</li>
+<li><code>403</code> Forbidden: The client&#39;s authentication is correct, but the client doesn&#39;t have permission to access the resource.</li>
+<li><code>404</code> Not Found: The requested resource could not be found on the server. This could mean the URI is incorrect or the resource was deleted.</li>
+</ul>
+<h3 is-upgraded><code>5xx</code>: Server Error</h3>
+<p>These codes mean something went wrong on the website&#39;s server.</p>
+<ul>
+<li><code>500</code> Internal Server Error: A generic error message indicating something went wrong on the server.</li>
+<li><code>502</code> Bad Gateway: The server was acting as a middleman server (i.e., proxy) and received an invalid response from the upstream server.</li>
+<li><code>503</code> Service Unavailable: The server is currently unable to handle the request due to temporary overload or maintenance.</li>
+<li><code>504</code> Gateway Timeout: Server did not receive a timely response from an upstream server.</li>
+</ul>
+<h2 is-upgraded>Response Headers and Body</h2>
+<p>The response body is the part of the response where the actual content you&#39;re looking for is sent back to you.</p>
+<h3 is-upgraded>Headers</h3>
+<p>Example HTTP GET Response:</p>
+<pre><code>HTTP/1.1 200 OK
+Date: Tue, 15 Sep 2024 19:20:00 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 354
+Cache-Control: no-cache
+ETag: &#34;5f6cabc3-15e&#34;
+</code></pre>
+<h3 is-upgraded>Body</h3>
+<pre><code language="language-json" class="language-json">{
+    &#34;city&#34;: &#34;San Francisco&#34;,
+    &#34;temperature&#34;: 18.7,
+    &#34;description&#34;: &#34;Partly cloudy&#34;,
+    &#34;humidity&#34;: 77,
+    &#34;wind_speed&#34;: 5.2,
+    &#34;forecast&#34;: [
+        {
+            &#34;day&#34;: &#34;Wednesday&#34;,
+            &#34;high&#34;: 19.4,
+            &#34;low&#34;: 13.2,
+            &#34;description&#34;: &#34;Mostly sunny&#34;
+        },
+        {
+            &#34;day&#34;: &#34;Thursday&#34;,
+            &#34;high&#34;: 20.1,
+            &#34;low&#34;: 14.0,
+            &#34;description&#34;: &#34;Clear skies&#34;
+        }
+    ]
+}
+</code></pre>
+<p>Key Points:</p>
+<ul>
+<li>When data is requested in <code>JSON</code> format, we should follow industry best practices.</li>
+<li>Considering that <code>JSON</code> stands for JavaScript Object Notation, the data payload found in the body of the response should be returned as an object, denoted by, <code>{ }</code>.</li>
+</ul>
+<p>Do:</p>
+<ul>
+<li>Envelope the data inside an object:</li>
+</ul>
+<pre><code language="language-json" class="language-json">{
+  data: [
+    { ... },
+    { ... }
+  ]
+}
+</code></pre>
+<p>Don&#39;t:</p>
+<ul>
+<li>Return a top-level array:</li>
+</ul>
+<pre><code language="language-text" class="language-text">[
+  { ... },
+  { ... }
+]
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTTP Request Example" duration="1">
+        <pre><code language="language-bash" class="language-bash">https://cat-fact.herokuapp.com/facts
+</code></pre>
+<p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/3fda6711c3572f85.png"></p>
+<pre><code language="language-bash" class="language-bash">&gt; GET /facts HTTP/1.1
+&gt; Host: cat-fact.herokuapp.com
+&gt; User-Agent: curl/8.7.1
+&gt; Accept: */*
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="REST API 101" duration="3">
+        <h2 is-upgraded>What is an API?</h2>
+<ul>
+<li>An <strong>API</strong> (Application Programming Interface) is a waiter in a restaurant.</li>
+<li>Customer (<strong>client</strong>) looks at the menu, tells the waiter the order (<strong>request</strong>).</li>
+<li>Waiter takes your order to the kitchen (<strong>the server</strong>) and brings the food (<strong>response</strong>) back to you.</li>
+<li>You don&#39;t need to know HOW the kitchen prepares the food. The waiter (<strong>API</strong>) simply delivers it.</li>
+</ul>
+<h2 is-upgraded>What is a RESTful API?</h2>
+<ul>
+<li>Options to order food: <ul>
+<li>at the counter</li>
+<li>via a drive-thru</li>
+<li>through a mobile app</li>
+</ul>
+</li>
+<li>No matter the method, same process, same food –&gt; consistent == RESTful API</li>
+</ul>
+<h2 is-upgraded>RESTful API Principles</h2>
+<h3 is-upgraded>1. Uniform Interface</h3>
+<ul>
+<li>Resources are manipulated via standardized URIs and representations (e.g., JSON, XML).</li>
+<li>The basic CRUD operations: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code></li>
+<li>The URL is intuitive and points to a specific resource.</li>
+</ul>
+<h3 is-upgraded>2. Stateless</h3>
+<ul>
+<li>Each request from the client to the server must contain all the necessary information for the server to understand and process it. The server does not store any client state between requests.</li>
+<li>Ex: When you place an order at the drive-thru, they don&#39;t remember your previous orders.</li>
+</ul>
+<h3 is-upgraded>3. Cacheable</h3>
+<ul>
+<li>Responses from the server must explicitly define whether they can be cached, and for how long.</li>
+<li>Enables clients to reduce the number of requests they make to the server, improving performance.</li>
+</ul>
+<h3 is-upgraded>4. Client-Server</h3>
+<ul>
+<li>The client is responsible for the user interface (UI) and request handling, while the server handles data storage and business logic.</li>
+<li>Ex: The menu at the counter of Wendy&#39;s should appear the same to the customer even though the way it handles the requests to send to the kitchen have evolved.</li>
+</ul>
+<h3 is-upgraded>5. Layered System</h3>
+<ul>
+<li>Encourages intermediary layers such as load balancers, security layers, or caches between the client and server.</li>
+<li>The client is unaware of these intermediary layers.</li>
+</ul>
+<h3 is-upgraded>6. Code on Demand (optional)</h3>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="API Versioning" duration="3">
+        <h2 is-upgraded>Why Version an API?</h2>
+<ul>
+<li>Backward Compatibility: Avoid breaking existing client applications when introducing new changes.</li>
+<li>Adding / Removing Features: Phase in new features and phase out old functionality in a controlled manner.</li>
+</ul>
+<h2 is-upgraded>API Versioning Strategies</h2>
+<h3 is-upgraded>1. URI Path Versioning</h3>
+<p>The version number is included directly in the URL path:</p>
+<pre><code language="language-bash" class="language-bash">GET /api/v1/users/123   (version 1 of the API)
+GET /api/v2/users/123   (version 2 of the API)
+</code></pre>
+<h3 is-upgraded>2. Query Parameters Versioning</h3>
+<p>The version is passed as a query parameter in the request URL:</p>
+<pre><code language="language-bash" class="language-bash">GET /api/users/123?version=1
+GET /api/users/123?version=2
+</code></pre>
+<h3 is-upgraded>3. Header Versioning</h3>
+<p>The version number is specified in the HTTP headers, usually under a custom header:</p>
+<pre><code language="language-bash" class="language-bash">GET /api/users/123
+Accept: application/vnd.myapi.v1+json   (version 1)
+Accept: application/vnd.myapi.v2+json   (version 2)
+</code></pre>
+<h3 is-upgraded>4. Embedded Versioning in Request/Response Body</h3>
+<p>The version number is embedded within the request or response body, instead of being part of the URL or headers:</p>
+<pre><code language="language-json" class="language-json">{
+  &#34;version&#34;: &#34;1.0&#34;,
+  &#34;data&#34;: { ... }
+}
+</code></pre>
+<p>Pros and Cons?</p>
+<h2 is-upgraded>API Deprecation Policies</h2>
+<ul>
+<li>Grace Period: Time the old version of an API is still available for after the new one is released.</li>
+<li>Clear Deprecation Warnings: API responses often include headers or messages warning users when they&#39;re using deprecated versions.</li>
+<li>Backward Compatibility: Ensuring older versions are compatible with existing clients as much as possible during the transition period.</li>
+</ul>
+<h3 is-upgraded>Semantic Versioning</h3>
+<p>A versioning system that defines a structured, predictable format for assigning version numbers to software.</p>
+<pre><code>MAJOR.MINOR.PATCH
+</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>MAJOR</code> version increments when there are incompatible changes that break backward compatibility.</li>
+<li><code>MINOR</code> version increments when new features are added in a backward-compatible way.</li>
+<li><code>PATCH</code> version increments when backward-compatible bug fixes are made.</li>
+</ul>
+<p>Example:</p>
+<pre><code>4.1.2
+</code></pre>
+<ul>
+<li><code>4</code> is the <code>MAJOR</code> version, indicating potential breaking changes.</li>
+<li><code>1</code> is the <code>MINOR</code> version, meaning new features have been added but no breaking changes.</li>
+<li><code>2</code> is the <code>PATCH</code> version, indicating that only bug fixes or small updates have been made.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="API Routes" duration="3">
+        <p>Every resource in a RESTful API has its own URL (web address).</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Method</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Route</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Usage</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>GET</code></p>
+</td><td colspan="1" rowspan="1"><p><code>/menu</code></p>
+</td><td colspan="1" rowspan="1"><p>Check the menu</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>GET</code></p>
+</td><td colspan="1" rowspan="1"><p><code>/orders/123</code></p>
+</td><td colspan="1" rowspan="1"><p>Get the status of an order</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>POST</code></p>
+</td><td colspan="1" rowspan="1"><p><code>/orders</code></p>
+</td><td colspan="1" rowspan="1"><p>Place an order</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>PUT</code></p>
+</td><td colspan="1" rowspan="1"><p><code>/orders/123</code></p>
+</td><td colspan="1" rowspan="1"><p>Update an existing order</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><code>DELETE</code></p>
+</td><td colspan="1" rowspan="1"><p><code>/orders/123</code></p>
+</td><td colspan="1" rowspan="1"><p>Cancel an order</p>
+</td></tr>
+</table>
+<p>How would I delete all the orders?</p>
+<h2 is-upgraded>Key Points</h2>
+<ul>
+<li>Use the plural of words to represent a collection (ex: <code>orders</code> vs <code>order</code>).</li>
+<li><code>GET</code> can be used on a singular resource or a collection or resources.</li>
+<li><code>POST</code> should be used on an endpoint that represents a collection.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="API Security Concepts" duration="5">
+        <h2 is-upgraded>1. Authentication</h2>
+<p>Only authenticated users or systems can access the API (<em>you are who you say you are</em>).</p>
+<ul>
+<li><strong>Basic Authentication</strong>: Client supplies username and password in the API request.</li>
+<li><strong>API keys</strong>: A simple, unique key provided to users to authenticate requests.</li>
+<li><strong>OAuth 2.0</strong>: An open standard for authorization that allows third-party services to access resources on behalf of the user without exposing credentials. <ul>
+<li>Access tokens have a TTL (Time to Live) associated to them, which specifies how long is considered valid.</li>
+</ul>
+</li>
+</ul>
+<p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/82f4650d9049b5ab.png"></p>
+<ul>
+<li><strong>OpenID Connect (OIDC)</strong>: An authentication layer built on top of OAuth 2.0, allowing identity verification and single sign-on (SSO).</li>
+<li><strong>JWT (JSON Web Tokens)</strong>: Encoded user data and includes a signature for verifying the authenticity of the token. Used for stateless authentication in APIs.</li>
+</ul>
+<h2 is-upgraded>2. Authorization</h2>
+<p>After authentication, authorization determines what resources a user or system can access (<em>what do you have access to</em>).</p>
+<ul>
+<li><strong>Role-based access control (RBAC)</strong>: Given a user&#39;s role, they are allowed certain operations.</li>
+</ul>
+<h2 is-upgraded>3. Encryption</h2>
+<p>Encrypting data in transit (via <code>TLS/SSL</code>) to protectg against &#34;man-in-the-middle&#34; attacks. Encrypted sometimes at rest to ensure data is unreadable if obtained.</p>
+<h2 is-upgraded>4. Rate Limiting and Throttling</h2>
+<p>Controls the number of requests a client can make in a specific time frame to prevent abuse (e.g., DoS - Denial of Service - attacks).</p>
+<h2 is-upgraded>5. Data Validation and Sanitization</h2>
+<p>Ensures that input data is valid, properly formatted, and free from malicious content (like SQL injection).</p>
+<ul>
+<li><strong>HMAC (Hash-based Message Authentication Code)</strong>: Ensures data integrity and authentication using cryptographic hashing and shared secret keys.</li>
+</ul>
+<h2 is-upgraded>6. API Gateway</h2>
+<p>Acts as a proxy to manage, secure, and monitor API traffic.</p>
+<h2 is-upgraded>7. Access Control</h2>
+<ul>
+<li><strong>CORS (Cross-Origin Resource Sharing)</strong>: Controls which external domains can interact with an API, protecting against unauthorized cross-origin requests.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="API Consumption with Postman REST Client 🚀" duration="10">
+        <p>We are going to consume an API using the <code>GET</code> method.</p>
+<p>Here are some good websites that will get you started when looking for free APIs to consume data from:</p>
+<ul>
+<li><a href="https://rapidapi.com/hub" target="_blank">Rapid API</a></li>
+<li><a href="https://github.com/public-apis/public-apis" target="_blank">GitHub Public APIs</a></li>
+</ul>
+<p>Let&#39;s take the following example:</p>
+<p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/536a555de2707117.png">     <img alt="drawing" style="width: 800.00px" src="img/9ba474267b36c944.png"></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Parameter</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Value</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Method</p>
+</td><td colspan="1" rowspan="1"><p><code>GET</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Base URL</p>
+</td><td colspan="1" rowspan="1"><p><code>https://yahoo-finance15.p.rapidapi.com</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Path Parameters</p>
+</td><td colspan="1" rowspan="1"><p><code>/api/v2/markets/tickers</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Query Parameters</p>
+</td><td colspan="1" rowspan="1"><p><code>page=1</code>, <code>type=STOCKS</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Request Header</p>
+</td><td colspan="1" rowspan="1"><p><code>x-rapidapi-host: yahoo-finance15.p.rapidapi.com</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>API Key sent via Request Header</p>
+</td><td colspan="1" rowspan="1"><p><code>x-rapidapi-key: REDACTED</code></p>
+</td></tr>
+</table>
+<p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/5b1c2ad67361151b.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Spec Driven Development" duration="3">
+        <p>Ideal software development occurs in two distinct phases:</p>
+<ol type="1">
+<li>The creation of a Spec</li>
+<li>Development of code to match the Spec</li>
+</ol>
+<p>Spec Driven Development is the process of generating a concise spec that can be used to describe your application&#39;s interactions in a pragmatic way. In other words, the Spec is a blueprint for your application, detailing how the user interacts with it, rather than just expected behaviors/results. In order to be successful with Spec Driven Development, the Spec must be:</p>
+<ol type="1">
+<li><strong>Standardized</strong>: Use of a standard Spec related to the type of application you are building</li>
+<li><strong>Consistent</strong>: The Spec should remain consistent throughout in operations, utlizing consistent design patterns</li>
+<li><strong>Tested</strong>: Agile development of the Spec, incorporating repeated user feedback with long-term focus in mind</li>
+<li><strong>Concrete</strong>: The creation of a complete, foundational Spec to be used for your application</li>
+<li><strong>Immutable</strong>: Coding to the Spec without deviation</li>
+<li><strong>Persistent</strong>: The Spec is not changed without strong reason and careful testing</li>
+</ol>
+<h2 is-upgraded>Specs Available</h2>
+<ul>
+<li><a href="https://raml.org/" target="_blank">RAML</a></li>
+<li><a href="https://apiblueprint.org/" target="_blank">API Blueprint</a></li>
+<li><a href="https://swagger.io/" target="_blank">Swagger</a> (renamed to <a href="https://github.com/OAI/OpenAPI-Specification" target="_blank">OpenAPI Spec</a>)</li>
+</ul>
+<p>We will be utilizing Swagger framework to design, produce, visualize, and consume our RESTful service. It provides a programming language-agnostic interface, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Analyzing an API Spec" duration="10">
+        <p>An OpenAPI spec is written in either <code>JSON</code> or <code>YAML</code>. We will be looking at a <code>YAML</code> spec for this demo.</p>
+<p>Use the online swagger editor 👉🏼 <a href="https://editor.swagger.io/" target="_blank">editor.swagger.io</a> or <a href="https://editor-next.swagger.io/" target="_blank">editor-next.swagger.io</a></p>
+<p>There will be a sample pre-populated, which we will further break down.</p>
+<p>For more docs, checkout: <a href="https://swagger.io/docs/specification/about/" target="_blank">Swagger.io Docs</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Power of AI" duration="6">
+        <h2 is-upgraded>Who is Allie K. Miller?</h2>
+<p><a href="https://www.alliekmiller.com/" target="_blank">Allie K. Miller</a> is a leading AI expert, previously the Global Head of Machine Learning for Startups and Venture Capital at AWS. She helped scale AI innovation worldwide and was the youngest woman to develop an AI product at IBM. A recognized voice in tech, she advocates for diversity in AI, co-founding <strong>Girls of the Future</strong> and serving as a national ambassador for  American Association for the Advancement of Science (AAAS). She holds an MBA from Wharton and frequently speaks on AI&#39;s future.</p>
+<h2 is-upgraded>Proof is in the Pudding</h2>
+<p><a href="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7235005812656467968" target="_blank">   <img alt="LinkedIn Post" style="width: 100.00px" src="img/5a74db3bbcf3a27b.png"></a><a href="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7236449411118043136" target="_blank">   <img alt="LinkedIn Post" style="width: 100.00px" src="img/5a74db3bbcf3a27b.png"></a></p>
+<p>Follow her <a href="https://www.linkedin.com/in/alliekmiller/" target="_blank">LinkedIn posts</a> by clicking on &#34;Follow&#34; to get <em>byte</em>-sized bits of information 🙂</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Workshop - Forge the Code 🧙🏼‍♀️🪄" duration="20">
+        <h2 is-upgraded>Kickoff with a ChatGPT Prompt</h2>
+<p>Select the correct GPT model to start out with!</p>
+<pre><code>given the following API endpoint: https://yahoo-finance15.p.rapidapi.com/api/v2/markets/tickers?page=1&amp;type=STOCKS
+
+lets say i pass in header x-rapidapi-host = yahoo-finance15.p.rapidapi.com and an API key which is passed in as a header like x-rapidapi-key = 9e87a2c143msh6b923
+
+which resulted in the following json object:
+
+{&#34;meta&#34;:{&#34;version&#34;:&#34;v1.0&#34;,&#34;status&#34;:200,&#34;copywrite&#34;:&#34;https://apicalls.io&#34;,&#34;totalrecords&#34;:7008,&#34;headers&#34;:{&#34;symbol&#34;:&#34;Symbol&#34;,&#34;name&#34;:&#34;Name&#34;,&#34;lastsale&#34;:&#34;Last Sale&#34;,&#34;netchange&#34;:&#34;Net Change&#34;,&#34;pctchange&#34;:&#34;% Change&#34;,&#34;marketCap&#34;:&#34;Market Cap&#34;}},&#34;body&#34;:[{&#34;symbol&#34;:&#34;ABBV&#34;,&#34;name&#34;:&#34;AbbVie Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$193.51&#34;,&#34;netchange&#34;:&#34;-0.32&#34;,&#34;pctchange&#34;:&#34;-0.165%&#34;,&#34;marketCap&#34;:&#34;341,805,178,095&#34;},{&#34;symbol&#34;:&#34;ASML&#34;,&#34;name&#34;:&#34;ASML Holding N.V. New York Registry Shares&#34;,&#34;lastsale&#34;:&#34;$814.00&#34;,&#34;netchange&#34;:&#34;10.50&#34;,&#34;pctchange&#34;:&#34;1.307%&#34;,&#34;marketCap&#34;:&#34;320,245,280,894&#34;},{&#34;symbol&#34;:&#34;NFLX&#34;,&#34;name&#34;:&#34;Netflix, Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$722.26&#34;,&#34;netchange&#34;:&#34;16.89&#34;,&#34;pctchange&#34;:&#34;2.394%&#34;,&#34;marketCap&#34;:&#34;309,968,434,830&#34;},{&#34;symbol&#34;:&#34;KO&#34;,&#34;name&#34;:&#34;Coca-Cola Company (The) Common Stock&#34;,&#34;lastsale&#34;:&#34;$71.33&#34;,&#34;netchange&#34;:&#34;-0.40&#34;,&#34;pctchange&#34;:&#34;-0.558%&#34;,&#34;marketCap&#34;:&#34;307,422,895,140&#34;},{&#34;symbol&#34;:&#34;BAC&#34;,&#34;name&#34;:&#34;Bank of America Corporation Common Stock&#34;,&#34;lastsale&#34;:&#34;$39.45&#34;,&#34;netchange&#34;:&#34;-0.42&#34;,&#34;pctchange&#34;:&#34;-1.053%&#34;,&#34;marketCap&#34;:&#34;306,115,328,943&#34;},{&#34;symbol&#34;:&#34;MRK&#34;,&#34;name&#34;:&#34;Merck &amp; Company, Inc. Common Stock (new)&#34;,&#34;lastsale&#34;:&#34;$114.96&#34;,&#34;netchange&#34;:&#34;-0.67&#34;,&#34;pctchange&#34;:&#34;-0.579%&#34;,&#34;marketCap&#34;:&#34;291,401,678,508&#34;},{&#34;symbol&#34;:&#34;CVX&#34;,&#34;name&#34;:&#34;Chevron Corporation Common Stock&#34;,&#34;lastsale&#34;:&#34;$147.45&#34;,&#34;netchange&#34;:&#34;-0.09&#34;,&#34;pctchange&#34;:&#34;-0.061%&#34;,&#34;marketCap&#34;:&#34;269,673,828,312&#34;},{&#34;symbol&#34;:&#34;SAP&#34;,&#34;name&#34;:&#34;SAP  SE ADS&#34;,&#34;lastsale&#34;:&#34;$230.93&#34;,&#34;netchange&#34;:&#34;0.49&#34;,&#34;pctchange&#34;:&#34;0.213%&#34;,&#34;marketCap&#34;:&#34;269,548,205,902&#34;},{&#34;symbol&#34;:&#34;CRM&#34;,&#34;name&#34;:&#34;Salesforce, Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$270.44&#34;,&#34;netchange&#34;:&#34;6.23&#34;,&#34;pctchange&#34;:&#34;2.358%&#34;,&#34;marketCap&#34;:&#34;258,540,640,000&#34;},{&#34;symbol&#34;:&#34;AMD&#34;,&#34;name&#34;:&#34;Advanced Micro Devices, Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$158.32&#34;,&#34;netchange&#34;:&#34;1.57&#34;,&#34;pctchange&#34;:&#34;1.002%&#34;,&#34;marketCap&#34;:&#34;256,238,045,700&#34;},{&#34;symbol&#34;:&#34;TM&#34;,&#34;name&#34;:&#34;Toyota Motor Corporation Common Stock&#34;,&#34;lastsale&#34;:&#34;$183.53&#34;,&#34;netchange&#34;:&#34;-1.87&#34;,&#34;pctchange&#34;:&#34;-1.009%&#34;,&#34;marketCap&#34;:&#34;247,291,479,267&#34;},{&#34;symbol&#34;:&#34;AZN&#34;,&#34;name&#34;:&#34;AstraZeneca PLC American Depositary Shares&#34;,&#34;lastsale&#34;:&#34;$76.87&#34;,&#34;netchange&#34;:&#34;-0.27&#34;,&#34;pctchange&#34;:&#34;-0.35%&#34;,&#34;marketCap&#34;:&#34;238,341,067,572&#34;},{&#34;symbol&#34;:&#34;NVS&#34;,&#34;name&#34;:&#34;Novartis AG Common Stock&#34;,&#34;lastsale&#34;:&#34;$116.42&#34;,&#34;netchange&#34;:&#34;0.05&#34;,&#34;pctchange&#34;:&#34;0.043%&#34;,&#34;marketCap&#34;:&#34;237,966,436,650&#34;},{&#34;symbol&#34;:&#34;BABA&#34;,&#34;name&#34;:&#34;Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share&#34;,&#34;lastsale&#34;:&#34;$97.19&#34;,&#34;netchange&#34;:&#34;7.10&#34;,&#34;pctchange&#34;:&#34;7.881%&#34;,&#34;marketCap&#34;:&#34;236,525,556,155&#34;},{&#34;symbol&#34;:&#34;TMUS&#34;,&#34;name&#34;:&#34;T-Mobile US, Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$201.44&#34;,&#34;netchange&#34;:&#34;-1.02&#34;,&#34;pctchange&#34;:&#34;-0.504%&#34;,&#34;marketCap&#34;:&#34;235,036,975,608&#34;},{&#34;symbol&#34;:&#34;TMO&#34;,&#34;name&#34;:&#34;Thermo Fisher Scientific Inc Common Stock&#34;,&#34;lastsale&#34;:&#34;$611.88&#34;,&#34;netchange&#34;:&#34;1.53&#34;,&#34;pctchange&#34;:&#34;0.251%&#34;,&#34;marketCap&#34;:&#34;233,735,446,924&#34;},{&#34;symbol&#34;:&#34;PEP&#34;,&#34;name&#34;:&#34;PepsiCo, Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$169.92&#34;,&#34;netchange&#34;:&#34;-2.19&#34;,&#34;pctchange&#34;:&#34;-1.272%&#34;,&#34;marketCap&#34;:&#34;233,397,422,208&#34;},{&#34;symbol&#34;:&#34;ADBE&#34;,&#34;name&#34;:&#34;Adobe Inc. Common Stock&#34;,&#34;lastsale&#34;:&#34;$524.07&#34;,&#34;netchange&#34;:&#34;-3.80&#34;,&#34;pctchange&#34;:&#34;-0.72%&#34;,&#34;marketCap&#34;:&#34;232,372,638,000&#34;},{&#34;symbol&#34;:&#34;LIN&#34;,&#34;name&#34;:&#34;Linde plc Ordinary Shares&#34;,&#34;lastsale&#34;:&#34;$479.35&#34;,&#34;netchange&#34;:&#34;1.99&#34;,&#34;pctchange&#34;:&#34;0.417%&#34;,&#34;marketCap&#34;:&#34;228,890,936,981&#34;},{&#34;symbol&#34;:&#34;CCZ&#34;,&#34;name&#34;:&#34;Comcast Holdings ZONES&#34;,&#34;lastsale&#34;:&#34;$58.89&#34;,&#34;netchange&#34;:&#34;1.64&#34;,&#34;pctchange&#34;:&#34;2.865%&#34;,&#34;marketCap&#34;:&#34;228,051,620,578&#34;},{&#34;symbol&#34;:&#34;SHEL&#34;,&#34;name&#34;:&#34;Shell PLC American Depositary Shares (each representing two (2) Ordinary Shares) &#34;,&#34;lastsale&#34;:&#34;$69.41&#34;,&#34;netchange&#34;:&#34;0.33&#34;,&#34;pctchange&#34;:&#34;0.478%&#34;,&#34;marketCap&#34;:&#34;217,305,988,853&#34;},{&#34;symbol&#34;:&#34;MCD&#34;,&#34;name&#34;:&#34;McDonald&#39;s Corporation Common Stock&#34;,&#34;lastsale&#34;:&#34;$300.27&#34;,&#34;netchange&#34;:&#34;1.21&#34;,&#34;pctchange&#34;:&#34;0.405%&#34;,&#34;marketCap&#34;:&#34;215,396,656,777&#34;},{&#34;symbol&#34;:&#34;ACN&#34;,&#34;name&#34;:&#34;Accenture plc Class A Ordinary Shares (Ireland)&#34;,&#34;lastsale&#34;:&#34;$339.62&#34;,&#34;netchange&#34;:&#34;0.41&#34;,&#34;pctchange&#34;:&#34;0.121%&#34;,&#34;marketCap&#34;:&#34;212,837,532,697&#34;},{&#34;symbol&#34;:&#34;CSCO&#34;,&#34;name&#34;:&#34;Cisco Systems, Inc. Common Stock (DE)&#34;,&#34;lastsale&#34;:&#34;$52.52&#34;,&#34;netchange&#34;:&#34;0.33&#34;,&#34;pctchange&#34;:&#34;0.632%&#34;,&#34;marketCap&#34;:&#34;209,593,391,381&#34;},{&#34;symbol&#34;:&#34;GE&#34;,&#34;name&#34;:&#34;GE Aerospace Common Stock&#34;,&#34;lastsale&#34;:&#34;$189.66&#34;,&#34;netchange&#34;:&#34;0.99&#34;,&#34;pctchange&#34;:&#34;0.525%&#34;,&#34;marketCap&#34;:&#34;205,650,427,295&#34;}]}
+
+can you create a RESTful API spec for me that creates the following endpoint: 
+
+GET /stocks 
+
+which takes in a query parameter named &#34;page&#34; that takes an integer and the result is the same object as seen above
+</code></pre>
+<p>Follow-up prompts:</p>
+<ul>
+<li>Can you generate a spec that follows the OpenAPI standard, in <code>yaml</code> format?</li>
+<li>Can you modify the output object to be encompassed in another object called <code>response</code>? Then include a nested attribute called <code>statusCode</code> that takes the same value of <code>status</code> found in the <code>meta</code> object.</li>
+<li>...</li>
+</ul>
+<h2 is-upgraded>Enter Claude.ai</h2>
+<p>Claude AI is a family of AI models developed by Anthropic, a company founded by former OpenAI researchers. The model is named after Claude Shannon, the father of information theory.</p>
+<p>Does require a paid subscription to take advantage of the &#34;Use a project&#34; functionality: <a href="https://claude.ai/" target="_blank">Claude.ai</a></p>
+<ul>
+<li>Allows you to create focused workspaces that organize conversations, documents, and knowledge around specific topics or tasks.</li>
+<li>Great for collaboration!</li>
+</ul>
+<p class="image-container"><img alt="drawing" style="width: 800.00px" src="img/5d9f74a55bffab68.png"></p>
+<p>Everything after this point will be done on the fly! Nothing prepped to mimic real-world scenario!</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Thank you!" duration="1">
+        <p class="image-container"><img alt="drawing" style="width: 500.00px" src="img/5040b51c2b00e5a3.png"></p>
+<p class="image-container"><img alt="drawing" style="width: 200.00px" src="img/3fc61ef0d24bac1f.png">   <img alt="drawing" style="width: 200.00px" src="img/289c30a6f1519b0d.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

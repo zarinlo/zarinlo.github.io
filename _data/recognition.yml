@@ -1,0 +1,81 @@
+- category: Speaking
+  items:
+    - title: "Designing and Deploying Responsible Multi-Agent AI Systems for Real-World Impact"
+      organization: "Pittsburgh Technology Council: Think!AI - A Beyond Big Data Summit"
+      date: 02.12.2026
+      links:
+        - label: Press
+          type: press
+          url: "https://thinkaiabeyondbigdatasummit.sched.com/event/2DQMl/tech-talks-building-deploying-scaling-ai-systems?iframe=yes&w=&sidebar=yes&bg=no"
+        - label: Deck
+          type: deck
+          url: https://zarin.io/
+    - title: "Develop RESTful APIs using AI"
+      organization: "getWITit: Women in Tech Conference (WITCON)"
+      date: 09.25.2024
+      links:
+        - label: Event
+          type: event
+          url: https://getwitit.org/
+        - label: Codelab
+          type: codelab
+          url: /codelabs/pittsburgh-witcon-2024/
+
+- category: Community
+  items:
+    - title: Engineering Training Program Lead
+      organization: BNY
+      date: Sep 2025
+      description: Owns engineering training curriculum and logistics for 500 campus hires per year across software development, data science, and production services.
+    - title: REST API Development Instructor
+      organization: BNY
+      date: Jun 2018 - Present
+      description: Designed and delivered an ongoing RESTful API development course for technologists across the firm.
+    - title: Global Development Lead, Women in Engineering Executive Committee
+      organization: BNY
+      date: Jan 2023 - Present
+      description: Leads professional development programs and learning partnerships that support women and non-binary technologists across the firm.
+    - title: Year Up Technology Mentor
+      organization: BNY
+      date: Jun 2020 - Mar 2023
+      description: Mentored young adults launching careers in technology through Year Up and helped create the program's first dedicated Medium publication.
+      description_parts:
+        - text: "Mentored young adults launching careers in technology through "
+        - text: Year Up
+          url: https://www.yearup.org/
+        - text: " and helped create the program's first "
+        - text: dedicated Medium publication
+          url: https://medium.com/year-up
+        - text: .
+
+- category: Recognition
+  items:
+    - title: Rising Star Award
+      organization: Women's Bond Club
+      date: May 2026
+      url: https://womensbondclub.com/WBC/WBC/Our_Programs/Rising_Star.aspx
+      description: Selected by senior executive leadership as BNY's sole corporate nominee for the Rising Star Award in recognition of career trajectory, professional excellence, and commitment to mentorship.
+    - title: Distinguished Engineer Candidate
+      organization: BNY
+      date: Mar 2023
+      description: Selected for BNY's emerging Distinguished Engineer track, recognizing technical leadership, strategic impact, and engineering excellence.
+    - title: Best in Class Team Award, Silver
+      organization: BNY
+      date: Apr 2023
+      description: Recognized as part of one team selected across BNY's Technology organization of more than 13,000 employees.
+    - title: Best in Class Individual Award, Silver
+      organization: BNY
+      date: Apr 2022
+      description: Recognized among 185 recipients across BNY's Technology organization of more than 13,000 employees.
+    - title: CISO Award
+      organization: BNY
+      date: Mar 2022
+      description: Recognized by the Chief Information Security Officer for contributions to an innovative security solution.
+    - title: Best in Class Individual Award
+      organization: BNY
+      date: Nov 2017
+      description: Recognized among 18 recipients across BNY's Technology organization of more than 13,000 employees.
+    - title: Best in Class Team Award
+      organization: BNY
+      date: Nov 2017
+      description: Recognized as part of one of six teams selected across BNY's Technology organization of more than 13,000 employees.

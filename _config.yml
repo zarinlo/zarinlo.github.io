@@ -1,0 +1,30 @@
+# Jekyll config for GitHub Pages blog
+title: Zarin Elias Lokhandwala
+description: Cyber Engineering Manager, Developer Advocate, Practical and Pragmatic
+baseurl: ""
+url: "https://zarin.io"
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /media/:year/:month/:day/:title/
+
+# Collections (optional later: projects, notes)
+collections:
+  codelabs:
+    output: false
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - .git
+  - .gitignore
+
+# Plugins (GitHub Pages supports these)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

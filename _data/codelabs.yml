@@ -1,0 +1,9 @@
+- title: Spring Boot API
+  url: /codelabs/springboot-api/
+  description: Learn how to design and build a RESTful Spring Boot API.
+- title: Angular Material UI
+  url: /codelabs/angular-ui/
+  description: Build an Angular UI that connects to the backend API.
+- title: Pittsburgh WITCON 2024
+  url: /codelabs/pittsburgh-witcon-2024/
+  description: Explore REST APIs, HTTP fundamentals, and API design concepts.

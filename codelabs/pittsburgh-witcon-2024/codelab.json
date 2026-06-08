@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-09-25T01:12:02-04:00",
+  "id": "pittsburgh-witcon-2024",
+  "duration": 82,
+  "title": "Pittsburgh WITCON 2024",
+  "summary": "Pittsburgh WITCON 2024",
+  "source": "pittsburgh-witcon-2024.md",
+  "theme": "",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "web"
+  ],
+  "tags": [],
+  "feedback": "https://zarin.io",
+  "url": "pittsburgh-witcon-2024"
+}

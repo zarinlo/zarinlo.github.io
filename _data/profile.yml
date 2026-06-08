@@ -1,0 +1,30 @@
+bio: >-
+  I'm a technologist, developer advocate, and process-improvement nerd who cares deeply about building better systems,
+  stronger processes, and making complicated technology easier to understand. I believe good documentation is one of
+  the most underrated parts of engineering, not just an afterthought, but one of the most important parts of building
+  good technology. I'm passionate about mentorship, inclusion, and helping early-career technologists find their
+  confidence. When I'm not working, I'm usually traveling, staying active, or trying to level up my pickleball game.
+tags:
+  - Developer Advocacy
+  - Documentation
+  - Mentorship
+  - Process Improvement
+  - Responsible AI
+  - Inclusive Engineering
+consulting:
+  title: Technical Training Consulting
+  company: ZELTECH Inc.
+  url: https://zeltechinc.com/
+  status: Launching soon
+  intro: >-
+    After years of building and teaching internal engineering programs, I'm starting ZELTECH Inc. to bring that same
+    practical, people-first training approach to teams outside my day-to-day work.
+  description: >-
+    The focus is simple: help organizations make technical concepts easier to understand, easier to teach, and easier
+    to apply.
+  focus:
+    - Engineering onboarding
+    - API development
+    - Developer enablement
+    - Technical documentation
+    - Responsible AI-assisted development

@@ -1,5 +1,8 @@
-### macOS ###
-# General
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+*.log
+.jekyll-server.pid
+.jekyll-server.log
 .DS_Store
-.AppleDouble
-.LSOverride

@@ -1,0 +1,38 @@
+- section: Technical Articles
+  items:
+    - title: "Publish Technical Tutorials in Google Codelab Format"
+      url: https://medium.com/@zarinlo/publish-technical-tutorials-in-google-codelab-format-b07ef76972cd?source=rss-af2b5f761682------2
+      source: Medium
+      source_url: https://medium.com/
+      external: true
+    - title: "Setup a CircleCI Pipeline for a Containerized Spring Boot App Connected to MongoDB Atlas"
+      url: https://faun.pub/setup-a-circleci-pipeline-for-a-containerized-spring-boot-app-93045fa060de?source=rss-af2b5f761682------2
+      source: FAUN
+      source_url: https://faun.pub/
+      external: true
+    - title: "Deck Out Your Mac Terminal: Z Shell (zsh) Made Easy"
+      url: https://medium.com/@zarinlo/deck-out-your-mac-terminal-z-shell-zsh-made-easy-232f5da30ce6?source=rss-af2b5f761682------2
+      source: Medium
+      source_url: https://medium.com/
+      external: true
+    - title: "Deck Out Your Mac Terminal: Bash Basics"
+      url: https://medium.com/@zarinlo/deck-out-your-mac-terminal-part-i-c8aeab99f561?source=rss-af2b5f761682------2
+      source: Medium
+      source_url: https://medium.com/
+      external: true
+
+- section: Blogs
+  items:
+    - title: "Mac Apps for the Dev at Heart"
+      url: https://medium.com/@zarinlo/mac-apps-for-the-dev-at-heart-f6153d5406b8?source=rss-af2b5f761682------2
+      source: Medium
+      source_url: https://medium.com/
+      external: true
+
+# Add future groups here without changing templates:
+# - section: Podcasts
+#   items:
+#     - title: Episode title
+#       url: https://example.com
+#       source: Podcast platform
+#       external: true

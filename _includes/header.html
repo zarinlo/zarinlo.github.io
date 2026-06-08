@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a href="{{ '/' | relative_url }}" class="logo" data-pjax>zarinlo</a>
+    <div class="header-controls">
+      {% include theme-switcher.html %}
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="site-menu"
+        aria-label="Toggle navigation menu"
+        data-menu-toggle
+      >
+        <span class="menu-toggle-icon" aria-hidden="true">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </span>
+        <span class="menu-toggle-label">Menu</span>
+      </button>
+    </div>
+    <div class="site-menu" id="site-menu" data-site-menu>
+      <nav class="nav" aria-label="Primary">
+        <a href="{{ '/#about' | relative_url }}" class="nav-link" data-menu-close>About</a>
+        <a href="{{ '/media/' | relative_url }}" class="nav-link" data-pjax>Media</a>
+        <a href="{{ '/codelabs/' | relative_url }}" class="nav-link" data-pjax>Codelabs</a>
+        <a href="{{ '/#speaking' | relative_url }}" class="nav-link" data-menu-close>Speaking</a>
+        <a href="{{ '/#community' | relative_url }}" class="nav-link" data-menu-close>Community</a>
+        <a href="{{ '/#recognition' | relative_url }}" class="nav-link" data-menu-close>Recognition</a>
+        <a href="{{ '/#consulting' | relative_url }}" class="nav-link" data-menu-close>Consulting</a>
+        <a href="{{ '/#contact' | relative_url }}" class="nav-link" data-menu-close>Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
