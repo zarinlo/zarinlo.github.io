@@ -58,5 +58,5 @@ After pushing to `master`, allow 1–2 minutes for GitHub Pages to rebuild, then
 
 ## Codelabs listing page
 
-The listing page lives at [`codelabs/index.md`](codelabs/index.md) (not a root-level `codelabs.md`) to avoid a Jekyll path conflict with the static `codelabs/` folder. Cards are rendered from [`_data/codelabs.yml`](_data/codelabs.yml) via [`_includes/codelab-grid.html`](_includes/codelab-grid.html).
+The listing page source is [`codelabs-index.md`](codelabs-index.md); GitHub Pages serves the built static [`codelabs/index.html`](codelabs/index.html). Cards are rendered from [`_data/codelabs.yml`](_data/codelabs.yml) via [`_includes/codelab-grid.html`](_includes/codelab-grid.html). After editing the source or data, run `./bin/build-codelabs-index` to refresh the static HTML.
 
