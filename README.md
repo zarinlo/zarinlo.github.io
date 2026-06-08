@@ -46,3 +46,17 @@ The site is built with **Jekyll 4 and Dart Sass**, so it does not use GitHub’s
 
 - **Posts**: Add `.md` files in `_posts/` with front matter (`layout: post`, `title`, `date`).
 - **Codelabs**: Add entries to `_data/codelabs.yml` and place each codelab’s files under `codelabs/<name>/` (e.g. `codelabs/my-codelab/index.html`). Use `url: /codelabs/my-codelab/` in the YAML.
+
+## After deploy
+
+After pushing to `master`, allow 1–2 minutes for GitHub Pages to rebuild, then verify:
+
+- [https://zarin.io/codelabs/](https://zarin.io/codelabs/) loads the listing page
+- Menu **Codelabs** and homepage **View all** link work
+- Individual codelab URLs still work (e.g. `/codelabs/springboot-api/`)
+- [https://zarin.io/sitemap.xml](https://zarin.io/sitemap.xml) includes `/codelabs/`
+
+## Codelabs listing page
+
+The listing page lives at [`codelabs/index.md`](codelabs/index.md) (not a root-level `codelabs.md`) to avoid a Jekyll path conflict with the static `codelabs/` folder. Cards are rendered from [`_data/codelabs.yml`](_data/codelabs.yml) via [`_includes/codelab-grid.html`](_includes/codelab-grid.html).
+

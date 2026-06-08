@@ -120,7 +120,7 @@ description: Cyber Engineering Manager, Developer Advocate, Pragmatic
                 <a
                   href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
                   class="speaking-link speaking-link-{{ link.type }}"
-                  {% if link.url contains '://' %}target="_blank" rel="noreferrer"{% else %}data-pjax{% endif %}
+                  {% if link.url contains '://' %}target="_blank" rel="noreferrer"{% elsif link.type == 'codelab' or link.url contains '/codelabs/' %}{% else %}data-pjax{% endif %}
                   aria-label="Open {{ item.title }} {{ link.label | downcase }}"
                   title="{{ link.label }}"
                 >
@@ -187,7 +187,7 @@ description: Cyber Engineering Manager, Developer Advocate, Pragmatic
           <a
             href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
             class="speaking-link speaking-link-{{ link.type }}"
-            {% if link.url contains '://' %}target="_blank" rel="noreferrer"{% else %}data-pjax{% endif %}
+            {% if link.url contains '://' %}target="_blank" rel="noreferrer"{% elsif link.type == 'codelab' or link.url contains '/codelabs/' %}{% else %}data-pjax{% endif %}
             aria-label="Open {{ item.title }} {{ link.label | downcase }}"
             title="{{ link.label }}"
           >

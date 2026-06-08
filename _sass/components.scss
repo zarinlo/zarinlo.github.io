@@ -142,6 +142,11 @@
   }
 }
 
+.nav-link.is-active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .header-controls {
   display: inline-flex;
   align-items: center;

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zarin.io/sitemap.xml
+
+# Legacy Polymer/Bower assets under codelabs; not intended for indexing.
+Disallow: /codelabs/bower_components/

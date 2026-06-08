@@ -9,10 +9,6 @@ markdown: kramdown
 highlighter: rouge
 permalink: /media/:year/:month/:day/:title/
 
-# Collections (optional later: projects, notes)
-collections:
-  codelabs:
-    output: false
 
 # Exclude from processing
 exclude:

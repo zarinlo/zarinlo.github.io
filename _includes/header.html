@@ -22,8 +22,8 @@
     <div class="site-menu" id="site-menu" data-site-menu>
       <nav class="nav" aria-label="Primary">
         <a href="{{ '/#about' | relative_url }}" class="nav-link" data-menu-close>About</a>
-        <a href="{{ '/media/' | relative_url }}" class="nav-link" data-pjax>Media</a>
-        <a href="{{ '/codelabs/' | relative_url }}" class="nav-link" data-pjax>Codelabs</a>
+        <a href="{{ '/media/' | relative_url }}" class="nav-link{% if page.url == '/media/' %} is-active{% endif %}" data-pjax data-nav-path="/media/"{% if page.url == '/media/' %} aria-current="page"{% endif %}>Media</a>
+        <a href="{{ '/codelabs/' | relative_url }}" class="nav-link{% if page.url == '/codelabs/' %} is-active{% endif %}" data-pjax data-nav-path="/codelabs/"{% if page.url == '/codelabs/' %} aria-current="page"{% endif %}>Codelabs</a>
         <a href="{{ '/#speaking' | relative_url }}" class="nav-link" data-menu-close>Speaking</a>
         <a href="{{ '/#community' | relative_url }}" class="nav-link" data-menu-close>Community</a>
         <a href="{{ '/#recognition' | relative_url }}" class="nav-link" data-menu-close>Recognition</a>

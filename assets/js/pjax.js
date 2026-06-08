@@ -2,6 +2,8 @@
   var main = document.getElementById("main");
   if (!main) return;
 
+  var HOME_PATH = "/";
+
   function isInternal(href) {
     try {
       var u = new URL(href, window.location.origin);
@@ -9,6 +11,16 @@
     } catch (e) {
       return false;
     }
+  }
+
+  function normalizePath(pathname) {
+    if (!pathname || pathname === "") return "/";
+    return pathname.endsWith("/") ? pathname : pathname + "/";
+  }
+
+  function isSectionPage(pathname) {
+    var path = normalizePath(pathname);
+    return path === "/media/" || path === "/codelabs/";
   }
 
   function load(url, push) {
@@ -47,6 +59,25 @@
       });
   }
 
+  function seedHomeHistory() {
+    var path = normalizePath(window.location.pathname);
+    if (path === HOME_PATH || !isSectionPage(path)) return;
+
+    var nav = window.performance && performance.getEntriesByType
+      ? performance.getEntriesByType("navigation")[0]
+      : null;
+    if (nav && nav.type === "back_forward") return;
+
+    window.history.pushState({ pjax: true, home: true }, "", HOME_PATH);
+    window.history.pushState({ pjax: true }, "", window.location.pathname + window.location.search + window.location.hash);
+  }
+
+  if (!window.history.state || !window.history.state.pjax) {
+    window.history.replaceState({ pjax: true }, "", window.location.href);
+  }
+
+  seedHomeHistory();
+
   document.addEventListener("click", function (e) {
     var a = e.target.closest("a[data-pjax]");
     if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
@@ -56,7 +87,7 @@
     load(href, true);
   });
 
-  window.addEventListener("popstate", function (e) {
-    if (e.state && e.state.pjax) load(window.location.href, false);
+  window.addEventListener("popstate", function () {
+    load(window.location.href, false);
   });
 })();
