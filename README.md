@@ -51,12 +51,13 @@ The site is built with **Jekyll 4 and Dart Sass**, so it does not use GitHub’s
 
 After pushing to `master`, allow 1–2 minutes for GitHub Pages to rebuild, then verify:
 
-- [https://zarin.io/codelabs/](https://zarin.io/codelabs/) loads the listing page
+- [https://zarin.io/labs/](https://zarin.io/labs/) loads the listing page
+- [https://zarin.io/labs/](https://zarin.io/labs/) loads the listing page
 - Menu **Codelabs** and homepage **View all** link work
 - Individual codelab URLs still work (e.g. `/codelabs/springboot-api/`)
-- [https://zarin.io/sitemap.xml](https://zarin.io/sitemap.xml) includes `/codelabs/`
+- [https://zarin.io/sitemap.xml](https://zarin.io/sitemap.xml) includes `/labs/`
 
 ## Codelabs listing page
 
-The listing page source is [`codelabs-index.md`](codelabs-index.md); GitHub Pages serves the built static [`codelabs/index.html`](codelabs/index.html). Cards are rendered from [`_data/codelabs.yml`](_data/codelabs.yml) via [`_includes/codelab-grid.html`](_includes/codelab-grid.html). After editing the source or data, run `./bin/build-codelabs-index` to refresh the static HTML.
+The listing page is [`labs.md`](labs.md) at `/labs/`. Individual codelab apps remain under `/codelabs/<name>/`. Cards are rendered from [`_data/codelabs.yml`](_data/codelabs.yml) via [`_includes/codelab-grid.html`](_includes/codelab-grid.html).
 

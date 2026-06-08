@@ -20,7 +20,7 @@
 
   function isSectionPage(pathname) {
     var path = normalizePath(pathname);
-    return path === "/media/" || path === "/codelabs/";
+    return path === "/media/" || path === "/labs/";
   }
 
   function load(url, push) {

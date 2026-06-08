@@ -2,7 +2,7 @@
 layout: page
 title: Codelabs
 description: Hands-on tutorials for building APIs, frontends, and understanding web architecture.
-permalink: /codelabs/
+permalink: /labs/
 ---
 
 <p class="codelabs-intro">Hands-on codelabs. Each opens in the same tab; use the browser back button to return.</p>

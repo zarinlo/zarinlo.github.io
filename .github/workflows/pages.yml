@@ -34,7 +34,7 @@ jobs:
         run: bundle exec jekyll build --destination _site
 
       - name: Verify codelabs listing page
-        run: test -f _site/codelabs/index.html
+        run: test -f _site/labs/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

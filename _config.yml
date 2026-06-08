@@ -16,7 +16,6 @@ exclude:
   - Gemfile.lock
   - node_modules
   - README.md
-  - codelabs-index.md
   - .git
   - .gitignore
 

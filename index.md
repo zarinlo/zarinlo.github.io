@@ -82,7 +82,7 @@ description: Cyber Engineering Manager, Developer Advocate, Pragmatic
   <section class="home-section" id="codelabs">
     <div class="home-section-heading">
       <h2 class="home-section-title">Codelabs</h2>
-      <a href="{{ '/codelabs/' | relative_url }}" class="home-section-link" data-pjax>View all</a>
+      <a href="{{ '/labs/' | relative_url }}" class="home-section-link" data-pjax>View all</a>
     </div>
     {% include codelab-grid.html %}
   </section>
