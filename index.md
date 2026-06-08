@@ -84,65 +84,7 @@ description: Cyber Engineering Manager, Developer Advocate, Pragmatic
       <h2 class="home-section-title">Codelabs</h2>
       <a href="{{ '/codelabs/' | relative_url }}" class="home-section-link" data-pjax>View all</a>
     </div>
-    <div class="highlight-grid">
-      <article class="highlight-card highlight-card-interactive">
-        <div class="highlight-card-content">
-          <h3 class="highlight-title">From Spec to Service</h3>
-          <p class="highlight-description">A hands-on codelab for learners of all ages to learn how a backend API is designed, structured, and built, from defining the contract to creating endpoints that manage and return data.</p>
-          <ul class="highlight-tags" aria-label="From Spec to Service tags">
-            <li class="highlight-tag">Backend</li>
-            <li class="highlight-tag">Spec-Driven Development</li>
-            <li class="highlight-tag">Java</li>
-            <li class="highlight-tag">Spring Boot</li>
-            <li class="highlight-tag">MongoDB</li>
-          </ul>
-          <div class="codelab-actions" aria-label="From Spec to Service links">
-            <a href="{{ '/codelabs/springboot-api/' | relative_url }}" class="codelab-action codelab-action-primary">View codelab</a>
-            <a href="https://github.com/zarinlo/sample-springboot-api" class="codelab-action codelab-action-secondary" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.09 3.29 9.4 7.85 10.92.57.1.78-.25.78-.56 0-.27-.01-1.18-.02-2.13-3.19.69-3.87-1.35-3.87-1.35-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a10.9 10.9 0 0 1 5.79 0c2.21-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.68 5.39-5.24 5.68.41.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.2.67.79.56a11.53 11.53 0 0 0 7.84-10.92C23.5 5.66 18.35.5 12 .5Z"/>
-              </svg>
-              View code
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="highlight-card highlight-card-interactive">
-        <div class="highlight-card-content">
-          <h3 class="highlight-title">From API to Interface</h3>
-          <p class="highlight-description">A hands-on codelab for learners of all ages to learn how a frontend application is built to connect to the Spring Boot backend API, retrieve data, and display it in the browser through a simple interface.</p>
-          <ul class="highlight-tags" aria-label="From API to Interface tags">
-            <li class="highlight-tag">Frontend</li>
-            <li class="highlight-tag">Angular</li>
-            <li class="highlight-tag">TypeScript</li>
-            <li class="highlight-tag">Node.js</li>
-          </ul>
-          <div class="codelab-actions" aria-label="From API to Interface links">
-            <a href="{{ '/codelabs/angular-ui/' | relative_url }}" class="codelab-action codelab-action-primary">View codelab</a>
-            <a href="https://github.com/zarinlo/sample-angular-ui" class="codelab-action codelab-action-secondary" target="_blank" rel="noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.09 3.29 9.4 7.85 10.92.57.1.78-.25.78-.56 0-.27-.01-1.18-.02-2.13-3.19.69-3.87-1.35-3.87-1.35-.52-1.34-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.71 1.26 3.37.97.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a10.9 10.9 0 0 1 5.79 0c2.21-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.68 5.39-5.24 5.68.41.36.78 1.07.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.2.67.79.56a11.53 11.53 0 0 0 7.84-10.92C23.5 5.66 18.35.5 12 .5Z"/>
-              </svg>
-              View code
-            </a>
-          </div>
-        </div>
-      </article>
-      <article class="highlight-card highlight-card-interactive">
-        <div class="highlight-card-content">
-          <h3 class="highlight-title">Talking to REST APIs</h3>
-          <p class="highlight-description">A hands-on workshop for learners of all ages to learn how web requests work, how APIs are designed and used, and how those ideas connect to practical development exercises.</p>
-          <ul class="highlight-tags" aria-label="Talking to REST APIs tags">
-            <li class="highlight-tag">HTTP</li>
-            <li class="highlight-tag">API Design</li>
-            <li class="highlight-tag">Web Architecture</li>
-          </ul>
-          <div class="codelab-actions" aria-label="Talking to REST APIs links">
-            <a href="{{ '/codelabs/pittsburgh-witcon-2024/' | relative_url }}" class="codelab-action codelab-action-primary">View codelab</a>
-          </div>
-        </div>
-      </article>
-    </div>
+    {% include codelab-grid.html %}
   </section>
 
   {% for group in site.data.recognition %}

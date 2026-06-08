@@ -1,9 +1,26 @@
-- title: Spring Boot API
+- title: From Spec to Service
   url: /codelabs/springboot-api/
-  description: Learn how to design and build a RESTful Spring Boot API.
-- title: Angular Material UI
+  description: A hands-on codelab for learners of all ages to learn how a backend API is designed, structured, and built, from defining the contract to creating endpoints that manage and return data.
+  tags:
+    - Backend
+    - Spec-Driven Development
+    - Java
+    - Spring Boot
+    - MongoDB
+  github: https://github.com/zarinlo/sample-springboot-api
+- title: From API to Interface
   url: /codelabs/angular-ui/
-  description: Build an Angular UI that connects to the backend API.
-- title: Pittsburgh WITCON 2024
+  description: A hands-on codelab for learners of all ages to learn how a frontend application is built to connect to the Spring Boot backend API, retrieve data, and display it in the browser through a simple interface.
+  tags:
+    - Frontend
+    - Angular
+    - TypeScript
+    - Node.js
+  github: https://github.com/zarinlo/sample-angular-ui
+- title: Talking to REST APIs
   url: /codelabs/pittsburgh-witcon-2024/
-  description: Explore REST APIs, HTTP fundamentals, and API design concepts.
+  description: A hands-on workshop for learners of all ages to learn how web requests work, how APIs are designed and used, and how those ideas connect to practical development exercises.
+  tags:
+    - HTTP
+    - API Design
+    - Web Architecture
