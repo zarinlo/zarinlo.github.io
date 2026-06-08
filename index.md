@@ -1,6 +1,6 @@
 ---
 layout: default
-description: Cyber Engineering Manager, Developer Advocate, Practical and Pragmatic
+description: Cyber Engineering Manager, Developer Advocate, Pragmatic
 ---
 
 <div class="home">
@@ -11,7 +11,7 @@ description: Cyber Engineering Manager, Developer Advocate, Practical and Pragma
         <span
         data-rotate-text
         class="rotating-line"
-        data-rotate-items="Cyber Engineering Manager|Developer Advocate|Practical and Pragmatic"
+        data-rotate-items="Cyber Engineering Manager|Developer Advocate|Pragmatic"
         >Cyber Engineering Manager</span>
       </span>
     </p>
